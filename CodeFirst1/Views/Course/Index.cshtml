@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Couses</h2>
+
+<div>
+    <table>
+        <tr>
+            <th>
+                Название
+            </th>
+            <th>
+                Стоимость
+            </th>
+        </tr>
+
+        @foreach (var b in ViewBag.Courses)
+        {
+            <tr>
+                <td>@b.Title</td>
+                <td>@b.Credits</td>
+            </tr>
+        }
+    </table>
+</div>
+
