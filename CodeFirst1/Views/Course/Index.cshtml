@@ -6,21 +6,21 @@
 <h2>Couses</h2>
 
 <div>
-    <table>
+    <table class="table">
         <tr>
             <th>
-                Название
+                Title
             </th>
             <th>
-                Стоимость
+                Credits
             </th>
         </tr>
 
         @foreach (var b in ViewBag.Courses)
         {
             <tr>
-                <td>@b.Title</td>
-                <td>@b.Credits</td>
+                <td><p>@b.Title</p></td>
+                <td><p>@b.Credits</p></td>
             </tr>
         }
     </table>
