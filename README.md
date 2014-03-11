@@ -1,4 +1,4 @@
 CodeFirst
 =========
 
-Learning and test project
+Learning and test project.
