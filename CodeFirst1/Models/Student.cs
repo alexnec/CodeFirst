@@ -15,7 +15,7 @@ namespace CodeFirst1.Models
         [Required]
         [StringLength(50, MinimumLength = 3, ErrorMessage = "Minimum length 3, maximum length 50")]
         public string FirstMidName { get; set; }
-        [DisplayFormat(DataFormatString = "{0:dd.MM.yyyy}")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd.MM.yyyy}")]
         [DataType(DataType.Date)]
         public DateTime EnrollmentDate { get; set; }
 
