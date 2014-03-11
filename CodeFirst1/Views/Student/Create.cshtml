@@ -38,7 +38,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.EnrollmentDate, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextBoxFor(model => model.EnrollmentDate, new { @class = "datepicker", @readonly = "readonly" })
+                @Html.TextBoxFor(model => model.EnrollmentDate, new { @class = "datepicker", @readonly = "readonly"})
                 @Html.ValidationMessageFor(model => model.EnrollmentDate)
             </div>
         </div>
@@ -59,7 +59,11 @@
     @Scripts.Render("~/bundles/jqueryval")
     <script type="text/javascript">
       $(function () {
-          $('.datepicker').datepicker();
+          $('.datepicker').datepicker({
+              changeMonth: true,
+              changeYear: true,
+              dateFormat: "dd.mm.yy"
+          });
       });
     </script>
 }
