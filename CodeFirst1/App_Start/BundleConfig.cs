@@ -18,12 +18,19 @@ namespace CodeFirst1
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
+                      "~/Scripts/respond.js",
+                      "~/Scripts/bootstrap-datepicker.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css",
                       "~/Content/ico_calendar.css"));
+
+            bundles.Add(new StyleBundle("~/Content/jqueryuicss").Include(
+                      "~/Content/themes/base/jquery-ui.css"));
+
+            bundles.Add(new StyleBundle("~/Content/bootstrap-datepickercss").Include(
+                      "~/Content/bootstrap-datepicker3.css"));
 
             bundles.Add(new StyleBundle("~/Content/jqueryuicss").Include(
                       "~/Content/themes/base/jquery-ui.css"));
