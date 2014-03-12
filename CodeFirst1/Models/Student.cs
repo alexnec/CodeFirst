@@ -17,6 +17,7 @@ namespace CodeFirst1.Models
         public string FirstMidName { get; set; }
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd.MM.yyyy}")]
         [DataType(DataType.Date)]
+        [UIHint("_Datepicker")]
         public DateTime EnrollmentDate { get; set; }
 
         public virtual ICollection<Enrollment> Enrollments { get; set; }

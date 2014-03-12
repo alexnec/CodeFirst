@@ -140,6 +140,8 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\ico_calendar.css" />
+    <Content Include="Content\Images\calendar_icon.png" />
     <Content Include="Content\themes\base\images\animated-overlay.gif" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -245,6 +247,7 @@
     <Content Include="Views\Student\Index.cshtml" />
     <Content Include="Views\Course\Index.cshtml" />
     <Content Include="Scripts\jquery-2.1.0.min.map" />
+    <Content Include="Views\Shared\EditorTemplates\_Datepicker.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
