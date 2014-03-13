@@ -1,7 +1,8 @@
 ﻿@model DateTime?
 
     <div class="input-group date">
-        @Html.TextBox("name", "", new { @class = "form-control", @readonly = "readonly" })
+        @Html.TextBox("", ViewData.TemplateInfo.FormattedModelValue, 
+        new { @class = "form-control", @readonly = "readonly" })
         <span class="input-group-addon">
             <i class="glyphicon glyphicon-th"></i>
         </span>
