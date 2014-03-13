@@ -6,9 +6,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace CodeFirst1.Models.Annotations 
 {
-    public class MyDateFormatAttribute : DisplayFormatAttribute
+    public class RusDateFormatAttribute : DisplayFormatAttribute
     {
-        public MyDateFormatAttribute()
+        public RusDateFormatAttribute()
             : base()
         {
             base.DataFormatString = "{0:dd/MM/yyyy}";

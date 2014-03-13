@@ -17,7 +17,7 @@ namespace CodeFirst1.Models
         [StringLength(50, MinimumLength = 3, ErrorMessage = "Minimum length 3, maximum length 50")]
         public string FirstMidName { get; set; }
         //[DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM.dd.yyyy}")]
-        [MyDateFormat(ApplyFormatInEditMode = true)]
+        [RusDateFormat(ApplyFormatInEditMode = true)]
         [DataType(DataType.Date)]
         [UIHint("_Datepicker")]
         public DateTime EnrollmentDate { get; set; }
