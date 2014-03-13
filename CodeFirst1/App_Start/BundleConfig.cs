@@ -21,6 +21,9 @@ namespace CodeFirst1
                       "~/Scripts/respond.js",
                       "~/Scripts/bootstrap-datepicker.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
+                        "~/Scripts/jquery-ui-{version}.js"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css",
@@ -34,9 +37,6 @@ namespace CodeFirst1
 
             bundles.Add(new StyleBundle("~/Content/jqueryuicss").Include(
                       "~/Content/themes/base/jquery-ui.css"));
-
-            bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
-                        "~/Scripts/jquery-ui-{version}.js"));
         }
     }
 }

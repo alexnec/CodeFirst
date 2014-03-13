@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
+using CodeFirst1.Models.Annotations;
 
 namespace CodeFirst1.Models
 {
@@ -15,7 +16,8 @@ namespace CodeFirst1.Models
         [Required]
         [StringLength(50, MinimumLength = 3, ErrorMessage = "Minimum length 3, maximum length 50")]
         public string FirstMidName { get; set; }
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd.MM.yyyy}")]
+        //[DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM.dd.yyyy}")]
+        [MyDateFormat(ApplyFormatInEditMode = true)]
         [DataType(DataType.Date)]
         [UIHint("_Datepicker")]
         public DateTime EnrollmentDate { get; set; }
