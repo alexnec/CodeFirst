@@ -218,6 +218,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <None Include="Scripts\jquery-2.1.0.intellisense.js" />
+    <Content Include="Scripts\App\learn-datepicker.js" />
     <Content Include="Scripts\bootstrap-datepicker.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -306,9 +307,7 @@
     <Content Include="Views\Shared\EditorTemplates\_Datepicker.cshtml" />
     <Content Include="Views\ViewTest\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Scripts\App\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />

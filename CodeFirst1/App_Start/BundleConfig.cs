@@ -24,6 +24,9 @@ namespace CodeFirst1
                       "~/Scripts/respond.js",
                       "~/Scripts/bootstrap-datepicker.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/App").Include(
+                      "~/Scripts/App/learn-datepicker.js"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/bootstrap-datepicker3.css",

@@ -57,3 +57,4 @@
 /// <reference path="locales/bootstrap-datepicker.vi.js" />
 /// <reference path="locales/bootstrap-datepicker.zh-cn.js" />
 /// <reference path="locales/bootstrap-datepicker.zh-tw.js" />
+/// <reference path="app/learn-datepicker.js" />
