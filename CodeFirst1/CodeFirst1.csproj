@@ -306,7 +306,9 @@
     <Content Include="Views\Shared\EditorTemplates\_Datepicker.cshtml" />
     <Content Include="Views\ViewTest\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Scripts\App\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
