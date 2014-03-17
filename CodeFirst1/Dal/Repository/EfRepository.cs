@@ -6,15 +6,15 @@ using System.Web;
 
 namespace CodeFirst1.Dal.Repository
 {
-    public class Repository : IRepository
+    public class EfRepository : IRepository
     {
         private IRepositoryContext repositoryContext;
-        
-        public Repository(IRepositoryContext repositoryContext)
+
+        public EfRepository(IRepositoryContext repositoryContext)
         {
             this.repositoryContext = repositoryContext;
         }
-        
+
         public void AddEntity<T>(T entity) where T : class
         {
             repositoryContext.GetDbSet<T>().Add(entity);

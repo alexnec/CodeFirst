@@ -14,17 +14,17 @@ namespace CodeFirst1.Controllers
 {
     public class StudentController : Controller
     {
-        private SchoolContext db;
+        //private SchoolContext db;
         private IRepository repository;
         private IRepositoryContext repositoryContext;
-
-        public StudentController() : base()
+        
+        
+        public StudentController(IRepository repository, IRepositoryContext repositoryContext)
         {
-            db = new SchoolContext();
-            repositoryContext = new RepositoryContext(db);
-            repository = new Repository(repositoryContext);
+            this.repository = repository;
+            this.repositoryContext = repositoryContext;
         }
-
+        
         // GET: /Student/
         public ActionResult Index()
         {
@@ -149,7 +149,7 @@ namespace CodeFirst1.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                //db.Dispose();
             }
             base.Dispose(disposing);
         }
