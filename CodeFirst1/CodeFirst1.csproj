@@ -124,6 +124,10 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Controllers\ViewTestController.cs" />
+    <Compile Include="Dal\Repository\IRepository.cs" />
+    <Compile Include="Dal\Repository\IRepositoryContext.cs" />
+    <Compile Include="Dal\Repository\Repository.cs" />
+    <Compile Include="Dal\Repository\RepositoryContext.cs" />
     <Compile Include="Dal\SchoolContext.cs" />
     <Compile Include="Dal\SchoolInitializer.cs" />
     <Compile Include="Global.asax.cs">
