@@ -6,39 +6,39 @@ using System.Web;
 
 namespace CodeFirst1.Dal.Repository
 {
-    public class EfRepository : IRepository
+    public class EfRepository<T> : IRepository<T> where T : class
     {
-        private IUnitOfWork repositoryContext;
+        private DbContext _dbContext;
 
-        public EfRepository(IUnitOfWork repositoryContext)
+        public EfRepository(DbContext dbContext)
         {
-            this.repositoryContext = repositoryContext;
+            this._dbContext = dbContext;
         }
 
-        public void AddEntity<T>(T entity) where T : class
+        public void AddEntity(T entity)
         {
-            repositoryContext.GetDbSet<T>().Add(entity);
+            _dbContext.Set<T>().Add(entity);
         }
 
-        public void UpdateEntity<T>(T entity) where T : class
+        public void UpdateEntity(T entity)
         {
-            //repositoryContext.GetDbSet<T>().Attach(entity);
-            repositoryContext.DbContext.Entry(entity).State = EntityState.Modified;
+            //_dbContext.Attach(entity);
+            _dbContext.Entry(entity).State = EntityState.Modified;
         }
 
-        public void DeleteEntity<T>(T entity) where T : class
+        public void DeleteEntity(T entity)
         {
-            repositoryContext.GetDbSet<T>().Remove(entity);
+            _dbContext.Set<T>().Remove(entity);
         }
 
-        public IList<T> GetList<T>() where T : class
+        public IList<T> GetList()
         {
-            return repositoryContext.GetDbSet<T>().ToList();
+            return _dbContext.Set<T>().ToList();
         }
         
-        public T GetEntity<T>(object primaryKey) where T : class
+        public T GetEntity(object primaryKey)
         {
-            return repositoryContext.GetDbSet<T>().Find(primaryKey);
+            return _dbContext.Set<T>().Find(primaryKey);
         }
     }
 }

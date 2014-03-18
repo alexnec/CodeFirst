@@ -8,7 +8,7 @@ namespace CodeFirst1.Dal.Repository
 {
     public interface IUnitOfWork
     {
-        IRepository GetRepository();
+        IRepository<T> GetRepository<T>() where T: class;
         void SaveChanges();
     }
 }

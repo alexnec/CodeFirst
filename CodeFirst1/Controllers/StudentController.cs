@@ -15,21 +15,22 @@ namespace CodeFirst1.Controllers
     public class StudentController : Controller
     {
         //private SchoolContext db;
-        private IRepository repository;
-        private IUnitOfWork repositoryContext;
+        private IRepository<Student> repository;
+        private IUnitOfWork _uow;
         
         
-        public StudentController(IRepository repository, IUnitOfWork repositoryContext)
+        public StudentController(IUnitOfWork repositoryContext)
         {
-            this.repository = repository;
-            this.repositoryContext = repositoryContext;
+            this._uow = repositoryContext;
+
+            repository = _uow.GetRepository<Student>();
         }
         
         // GET: /Student/
         public ActionResult Index()
         {
             //return View(db.Students.ToList());
-            return View(repository.GetList<Student>());
+            return View(repository.GetList());
         }
 
         // GET: /Student/Details/5
@@ -40,7 +41,7 @@ namespace CodeFirst1.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             //Student student = db.Students.Find(id);
-            Student student = repository.GetEntity<Student>(id);
+            Student student = repository.GetEntity(id);
             if (student == null)
             {
                 return HttpNotFound();
@@ -67,8 +68,8 @@ namespace CodeFirst1.Controllers
                 {
                     //db.Students.Add(student);
                     //db.SaveChanges();
-                    repository.AddEntity<Student>(student);
-                    repositoryContext.SaveChanges();
+                    repository.AddEntity(student);
+                    _uow.SaveChanges();
                     return RedirectToAction("Index");
                 }
             }
@@ -89,7 +90,7 @@ namespace CodeFirst1.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             //Student student = db.Students.Find(id);
-            Student student = repository.GetEntity<Student>(id);
+            Student student = repository.GetEntity(id);
             if (student == null)
             {
                 return HttpNotFound();
@@ -108,8 +109,8 @@ namespace CodeFirst1.Controllers
             {
                 //db.Entry(student).State = EntityState.Modified;
                 //db.SaveChanges();
-                repository.UpdateEntity<Student>(student);
-                repositoryContext.SaveChanges();
+                repository.UpdateEntity(student);
+                _uow.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(student);
@@ -123,7 +124,7 @@ namespace CodeFirst1.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             //Student student = db.Students.Find(id);
-            Student student = repository.GetEntity<Student>(id);
+            Student student = repository.GetEntity(id);
             if (student == null)
             {
                 return HttpNotFound();
@@ -139,9 +140,9 @@ namespace CodeFirst1.Controllers
             //Student student = db.Students.Find(id);
             //db.Students.Remove(student);
             //db.SaveChanges();
-            Student student = repository.GetEntity<Student>(id);
-            repository.DeleteEntity<Student>(student);
-            repositoryContext.SaveChanges();
+            Student student = repository.GetEntity(id);
+            repository.DeleteEntity(student);
+            _uow.SaveChanges();
             return RedirectToAction("Index");
         }
 

@@ -4,6 +4,7 @@ using Microsoft.Practices.Unity.Configuration;
 using CodeFirst1.Dal.Repository;
 using CodeFirst1.Dal;
 using System.Data.Entity;
+using CodeFirst1.Models;
 
 namespace CodeFirst1.App_Start
 {
@@ -44,7 +45,9 @@ namespace CodeFirst1.App_Start
             container.RegisterType<DbContext, SchoolContext>(new InjectionConstructor());
 
             container.RegisterType<IUnitOfWork, EfUnitOfWork>(new PerRequestLifetimeManager());
-            container.RegisterType<IRepository, EfRepository>();
+
+            //container.RegisterType<IUnitOfWork, EfUnitOfWork>(new PerRequestLifetimeManager());
+            //container.RegisterType<IRepository, EfRepository>();
         }
     }
 }

@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace CodeFirst1.Dal.Repository
+namespace CodeFirst1.Dal.Repository 
 {
-    public interface IRepository
+    public interface IRepository<T> where T : class
     {
-        void AddEntity<T>(T entity) where T : class;
+        void AddEntity(T entity);
 
-        void UpdateEntity<T>(T entity) where T : class;
+        void UpdateEntity(T entity);
 
-        void DeleteEntity<T>(T entity) where T : class;
+        void DeleteEntity(T entity);
 
-        IList<T> GetList<T>() where T : class;
+        IList<T> GetList();
 
-        T GetEntity<T>(object primaryKey) where T : class;
+        T GetEntity(object primaryKey);
     }
 }
