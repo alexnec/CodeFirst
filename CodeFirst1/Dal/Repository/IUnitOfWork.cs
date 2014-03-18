@@ -6,12 +6,9 @@ using System.Web;
 
 namespace CodeFirst1.Dal.Repository
 {
-    public interface IRepositoryContext
+    public interface IUnitOfWork
     {
-        DbContext DbContext { get; }
-
-        DbSet<T> GetDbSet<T>() where T: class;
-
+        IRepository GetRepository();
         void SaveChanges();
     }
 }

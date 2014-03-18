@@ -6,11 +6,11 @@ using System.Web;
 
 namespace CodeFirst1.Dal.Repository
 {
-    public class EfRepositoryContext : IRepositoryContext
+    public class EfUnitOfWork : IUnitOfWork
     {
          private DbContext dbContext;
 
-         public EfRepositoryContext(DbContext db)
+         public EfUnitOfWork(DbContext db)
          {
              this.dbContext = db;
          }

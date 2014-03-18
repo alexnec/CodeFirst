@@ -3,6 +3,7 @@ using Microsoft.Practices.Unity;
 using Microsoft.Practices.Unity.Configuration;
 using CodeFirst1.Dal.Repository;
 using CodeFirst1.Dal;
+using System.Data.Entity;
 
 namespace CodeFirst1.App_Start
 {
@@ -40,9 +41,9 @@ namespace CodeFirst1.App_Start
             // TODO: Register your types here
             // container.RegisterType<IProductRepository, ProductRepository>();
 
-            SchoolContext dbContext = new SchoolContext();
+            container.RegisterType<DbContext, SchoolContext>(new InjectionConstructor());
 
-            container.RegisterType<IRepositoryContext, EfRepositoryContext>(new InjectionConstructor(dbContext));
+            container.RegisterType<IUnitOfWork, EfUnitOfWork>(new PerRequestLifetimeManager());
             container.RegisterType<IRepository, EfRepository>();
         }
     }

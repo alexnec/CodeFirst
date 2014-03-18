@@ -8,9 +8,9 @@ namespace CodeFirst1.Dal.Repository
 {
     public class EfRepository : IRepository
     {
-        private IRepositoryContext repositoryContext;
+        private IUnitOfWork repositoryContext;
 
-        public EfRepository(IRepositoryContext repositoryContext)
+        public EfRepository(IUnitOfWork repositoryContext)
         {
             this.repositoryContext = repositoryContext;
         }

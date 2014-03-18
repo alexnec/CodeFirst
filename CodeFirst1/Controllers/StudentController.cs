@@ -16,10 +16,10 @@ namespace CodeFirst1.Controllers
     {
         //private SchoolContext db;
         private IRepository repository;
-        private IRepositoryContext repositoryContext;
+        private IUnitOfWork repositoryContext;
         
         
-        public StudentController(IRepository repository, IRepositoryContext repositoryContext)
+        public StudentController(IRepository repository, IUnitOfWork repositoryContext)
         {
             this.repository = repository;
             this.repositoryContext = repositoryContext;
@@ -147,10 +147,10 @@ namespace CodeFirst1.Controllers
 
         protected override void Dispose(bool disposing)
         {
-            if (disposing)
-            {
+//            if (disposing)
+//            {
                 //db.Dispose();
-            }
+            //}
             base.Dispose(disposing);
         }
     }
