@@ -22,15 +22,18 @@ namespace CodeFirst1
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js",
-                      "~/Scripts/bootstrap-datepicker.js"));
+                      "~/Scripts/bootstrap-datepicker.js",
+                      "~/Scripts/select2.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/App").Include(
-                      "~/Scripts/App/learn-datepicker.js"));
+                      "~/Scripts/App/learn-datepicker.js",
+                      "~/Scripts/App/learn-select2.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/bootstrap-datepicker3.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                      "~/Content/select2.css"));
         }
     }
 }

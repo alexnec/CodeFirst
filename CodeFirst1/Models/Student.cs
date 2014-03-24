@@ -28,9 +28,9 @@ namespace CodeFirst1.Models
         public Student()
         {
             Posts = new List<Post>();
-            Posts.Add(new Post() { NamePost = "Trulala" });
-            Posts.Add(new Post() { NamePost = "Qwerty" });
-            Posts.Add(new Post() { NamePost = "1q2w3e" });
+            Posts.Add(new Post() { ID = 1, NamePost = "Trulala" });
+            Posts.Add(new Post() { ID = 2, NamePost = "Qwerty" });
+            Posts.Add(new Post() { ID = 3, NamePost = "1q2w3e" });
         }
 
     }
