@@ -12,7 +12,6 @@
     <description>Add datepicker picker to field or to any other element.</description>
     <releaseNotes>https://github.com/eternicode/bootstrap-datepicker/issues?milestone=9&amp;state=closed</releaseNotes>
     <copyright>Copyright 2013 Stefan Petre, Andrew Rowls</copyright>
-    <language />
     <tags>Bootstrap Datepicker</tags>
     <dependencies>
       <dependency id="bootstrap" version="2.3.1" />
