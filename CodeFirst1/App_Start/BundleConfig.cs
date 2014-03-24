@@ -33,7 +33,8 @@ namespace CodeFirst1
                       "~/Content/bootstrap.css",
                       "~/Content/bootstrap-datepicker3.css",
                       "~/Content/site.css",
-                      "~/Content/select2.css"));
+                      "~/Content/css/select2.css",
+                      "~/Content/select2-bootstrap.css"));
         }
     }
 }

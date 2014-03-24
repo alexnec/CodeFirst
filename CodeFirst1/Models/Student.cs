@@ -22,16 +22,15 @@ namespace CodeFirst1.Models
         [UIHint("_Datepicker")]
         public DateTime EnrollmentDate { get; set; }
         public virtual List<Post> Posts { get; set; }
+        public Country Country { get; set; }
 
         public virtual ICollection<Enrollment> Enrollments { get; set; }
-
-        public Student()
-        {
-            Posts = new List<Post>();
-            Posts.Add(new Post() { ID = 1, NamePost = "Trulala" });
-            Posts.Add(new Post() { ID = 2, NamePost = "Qwerty" });
-            Posts.Add(new Post() { ID = 3, NamePost = "1q2w3e" });
-        }
-
     }
+
+    public enum Country {
+        Russia,
+        USA,
+        Canada,
+        China
+   }
 }

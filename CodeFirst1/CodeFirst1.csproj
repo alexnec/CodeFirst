@@ -162,6 +162,10 @@
     <Compile Include="Migrations\201403210234408_AddEntityPost.Designer.cs">
       <DependentUpon>201403210234408_AddEntityPost.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201403240642093_AddCountry.cs" />
+    <Compile Include="Migrations\201403240642093_AddCountry.Designer.cs">
+      <DependentUpon>201403240642093_AddCountry.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Annotations\RusDateFormat.cs" />
     <Compile Include="Models\Course.cs" />
@@ -410,6 +414,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201403210234408_AddEntityPost.resx">
       <DependentUpon>201403210234408_AddEntityPost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201403240642093_AddCountry.resx">
+      <DependentUpon>201403240642093_AddCountry.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
