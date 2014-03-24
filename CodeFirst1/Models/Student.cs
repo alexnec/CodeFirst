@@ -21,7 +21,17 @@ namespace CodeFirst1.Models
         [DataType(DataType.Date)]
         [UIHint("_Datepicker")]
         public DateTime EnrollmentDate { get; set; }
+        public virtual List<Post> Posts { get; set; }
 
         public virtual ICollection<Enrollment> Enrollments { get; set; }
+
+        public Student()
+        {
+            Posts = new List<Post>();
+            Posts.Add(new Post() { NamePost = "Trulala" });
+            Posts.Add(new Post() { NamePost = "Qwerty" });
+            Posts.Add(new Post() { NamePost = "1q2w3e" });
+        }
+
     }
 }

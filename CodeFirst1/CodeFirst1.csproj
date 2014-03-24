@@ -135,6 +135,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityMvcActivator.cs" />
+    <Compile Include="Areas\Bu\BuAreaRegistration.cs" />
+    <Compile Include="Areas\Bu\Controllers\DefaultAreaController.cs" />
     <Compile Include="Controllers\CourseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
@@ -148,9 +150,23 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201403210146491_InitialCreate.cs" />
+    <Compile Include="Migrations\201403210146491_InitialCreate.Designer.cs">
+      <DependentUpon>201403210146491_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201403210231593_AddColCount.cs" />
+    <Compile Include="Migrations\201403210231593_AddColCount.Designer.cs">
+      <DependentUpon>201403210231593_AddColCount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201403210234408_AddEntityPost.cs" />
+    <Compile Include="Migrations\201403210234408_AddEntityPost.Designer.cs">
+      <DependentUpon>201403210234408_AddEntityPost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Annotations\RusDateFormat.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\Enrollment.cs" />
+    <Compile Include="Models\Post.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -236,6 +252,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Areas\Bu\Views\web.config" />
+    <Content Include="Areas\Bu\Views\DefaultArea\Index.cshtml" />
     <None Include="Scripts\jquery-2.1.0.intellisense.js" />
     <Content Include="Scripts\App\learn-datepicker.js" />
     <Content Include="Scripts\bootstrap-datepicker.js" />
@@ -326,10 +344,24 @@
     <Content Include="Views\Shared\EditorTemplates\_Datepicker.cshtml" />
     <Content Include="Views\ViewTest\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201403210146491_InitialCreate.resx">
+      <DependentUpon>201403210146491_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201403210231593_AddColCount.resx">
+      <DependentUpon>201403210231593_AddColCount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201403210234408_AddEntityPost.resx">
+      <DependentUpon>201403210234408_AddEntityPost.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Areas\Bu\Models\" />
+    <Folder Include="Areas\Bu\Views\Shared\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
