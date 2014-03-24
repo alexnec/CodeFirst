@@ -42,7 +42,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Country, new { @class = "control-label col-md-2" })
             <div class="col-md-10 ">
-                @Html.EnumDropDownListFor(model => model.Country, new { @id = "selectPost" })
+                @Html.EnumDropDownListFor(model => model.Country, new { @id = "e1" })
                 @Html.ValidationMessageFor(model => model.Country)
              </div>
         </div>
@@ -61,7 +61,4 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
-    <script type="text/javascript">
-        $("#selectPost").select2();
-    </script>
 }
