@@ -1,7 +1,10 @@
-﻿@model IEnumerable<CodeFirst1.Models.Student>
+﻿<!--model IEnumerable<CodeFirst1.Models.Student>-->
+@model PagedList.IPagedList<CodeFirst1.Models.Student>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Students";
 }
 
 <h2>Index</h2>
@@ -9,16 +12,26 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+
+@using (Html.BeginForm("Index", "Student", FormMethod.Get))
+{
+    <p>
+        Find by name: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { @class = "form-control" })
+        <input type="submit" value="Search" class="btn btn-default" />
+    </p>
+}
+
 <table class="table">
     <tr>
+    <tr>
         <th>
-            @Html.DisplayNameFor(model => model.LastName)
+            @Html.ActionLink("Last Name", "Index", new { sortOrder = ViewBag.NameSortParm })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.FirstMidName)
+            First Name
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.EnrollmentDate)
+            @Html.ActionLink("Enrollment Date", "Index", new { sortOrder = ViewBag.DateSortParm })
         </th>
         <th></th>
     </tr>
@@ -43,3 +56,9 @@
 }
 
 </table>
+
+<br />
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
