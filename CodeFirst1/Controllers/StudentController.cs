@@ -127,6 +127,7 @@ namespace CodeFirst1.Controllers
         // GET: /Student/Edit/5
         public ActionResult Edit(int? id)
         {
+            throw new InvalidOperationException();
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);

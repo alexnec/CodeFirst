@@ -43,6 +43,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="Elmah">
+      <HintPath>..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -143,6 +146,7 @@
     <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="Areas\Bu\BuAreaRegistration.cs" />
     <Compile Include="Areas\Bu\Controllers\DefaultAreaController.cs" />
+    <Compile Include="Areas\TestBookiArea\TestBookiAreaAreaRegistration.cs" />
     <Compile Include="Controllers\CourseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
@@ -185,6 +189,7 @@
     <Content Include="App_Data\CodeFirst1_log.ldf">
       <DependentUpon>CodeFirst1.mdf</DependentUpon>
     </Content>
+    <Content Include="App_Readme\Elmah.txt" />
     <Content Include="Content\bootstrap-datepicker.css" />
     <Content Include="Content\bootstrap-datepicker3.css" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -267,6 +272,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="Areas\Bu\Views\web.config" />
     <Content Include="Areas\Bu\Views\DefaultArea\Index.cshtml" />
+    <Content Include="Areas\TestBookiArea\Views\web.config" />
+    <None Include="Properties\PublishProfiles\LoacalCodeFirst1.pubxml" />
     <None Include="Scripts\jquery-2.1.0.intellisense.js" />
     <Content Include="Scripts\App\learn-datepicker.js" />
     <Content Include="Scripts\App\learn-select2.js" />
@@ -336,7 +343,9 @@
     <Content Include="Scripts\select2.js" />
     <Content Include="Scripts\select2.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -345,7 +354,7 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\Err1or.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
@@ -381,6 +390,9 @@
   <ItemGroup>
     <Folder Include="Areas\Bu\Models\" />
     <Folder Include="Areas\Bu\Views\Shared\" />
+    <Folder Include="Areas\TestBookiArea\Controllers\" />
+    <Folder Include="Areas\TestBookiArea\Models\" />
+    <Folder Include="Areas\TestBookiArea\Views\Shared\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
